@@ -7,8 +7,12 @@ function agregarLista(){
   document.getElementById("nuevaLista").appendChild(tituloLista);
 
 }
+
+var listas = []; //creo un arreglo para ingresar las listas que se van creando, y poderlas borrar de acuerdo con el indice??
+
 function crearPendiente(){
-  var h5 = document.createElement("h4");
+
+  var h5 = document.createElement("h5");
   var agregarPendiente = document.createTextNode("Agregar pendiente");
   h5.appendChild(agregarPendiente);
   document.getElementById("nuevaLista").appendChild(h5);
@@ -22,6 +26,7 @@ function crearPendiente(){
   var textoBoton = document.createTextNode("Crear Pendiente");
   nuevoBoton.appendChild(textoBoton);
 
+
   nuevoBoton.onclick = function listaDePendientes(){
                           var seccion = document.createElement("section");
                           var ul = document.createElement("ul");
@@ -33,13 +38,16 @@ function crearPendiente(){
                           ul.appendChild(li);
                           seccion.appendChild(ul);
                           document.getElementById("nuevaLista").appendChild(seccion);
-                          pendiente.innerHTML = "";
+                          // quiero borrar lo que guarda el input ----> pendiente.innerHTML = "";
                           var btnBorrarPendiente = document.createElement("button");
                           btnBorrarPendiente.type = "button";
                           btnBorrarPendiente.id = "borrarPendiente";
                           var textoBorrarPendiente = document.createTextNode("Borrar");
                           btnBorrarPendiente.appendChild(textoBorrarPendiente);
                           document.getElementById("lista").appendChild(btnBorrarPendiente);
+                          btnBorrarPendiente.onclick = function pendienteBorrado(){
+                                                        alert("ya no se que estoy haciendo :(");
+                                                        }
                       }
   document.getElementById("nuevaLista").appendChild(nuevoInput);
   document.getElementById("nuevaLista").appendChild(nuevoBoton);
